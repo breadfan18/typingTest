@@ -5,10 +5,28 @@
     <title>Swaroop's Typing Test</title>
 </head>
 <body>
-<header>
-    <h2>Test Your Typing Speed</h2>
-    <p>This is a typing test. Your goal is to duplicate the provided text, EXACTLY, in the field below. The timer starts when you start
+    <header>
+        <h2>Test Your Typing Speed</h2>
+    </header>
+
+    <article class="description">
+        <p>This is a typing test. Your goal is to duplicate the provided text, EXACTLY, in the field
+            below. The timer starts when you start
             typing, and only stops when you match this text exactly. Good Luck!</p>
-</header>
+    </article>
+
+    <section>
+        <div id="originText">
+            <p>The text to test.</p>
+        </div>
+        <div class="test-wrapper">
+            <textArea id="test-area" class="testArea" rows=6 placeholder="The clock starts when you start typing.."></textArea>
+        </div>
+
+        <div id="meta">
+            <div id="timer">00:00:00</div>
+            <button class="reset">Start Over</button>
+        </div>
+    </section>
 </body>
 </html>

@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1e37e48-cda6-488f-90c0-82098db19a53" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TypingPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/TypingPage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +72,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611626814866</updated>
-      <workItem from="1611626816091" duration="383000" />
+      <workItem from="1611626816091" duration="1108000" />
     </task>
     <servers />
   </component>
@@ -88,5 +89,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1295" y="241" key="search.everywhere.popup" timestamp="1611627349161">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-1295" y="241" key="search.everywhere.popup/0.0.1920.1200/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1611627349161" />
   </component>
 </project>
