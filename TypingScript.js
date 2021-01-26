@@ -6,13 +6,21 @@ const testWrapper = document.querySelector(".test-wrapper");
 
 
 let timer = [0,0,0,0];
+let interval;
+let timerRunning = false;
 
 //add leading zeroes to timer
-
+function addLeadingZeroes(number) {
+    let leadingZeroAdded = number;
+    if (number <= 9) {
+        leadingZeroAdded = "0" + number;
+    }
+    return leadingZeroAdded;
+}
 
 //Start the timer
 function runTimer() {
-    let currentTime = timer[0] + ":" + timer[1] + ":" + timer[2];
+    let currentTime = addLeadingZeroes(timer[0]) + ":" + addLeadingZeroes(timer[1]) + ":" + addLeadingZeroes(timer[2]);
     theTimer.innerHTML = currentTime;
     timer[3]++;
 
@@ -25,16 +33,14 @@ function runTimer() {
 //Text Validation
 function spellCheck() {
     let currentText = testArea.value;
-    console.log(currentText);
-
     let originTextSub = originText.substring(0, currentText.length);
-    console.log(originTextSub);
 
     if (currentText === originText) {
         testArea.style.borderColor = "#429890";
+        clearInterval(interval);
     } else {
         if (currentText !== originTextSub) {
-            testArea.style.borderColor = "red";
+            testArea.style.borderColor = "orangered";
         } else {
             testArea.style.borderColor = "blue";
         }
@@ -44,12 +50,18 @@ function spellCheck() {
 
 
 //Reset Everything
-
+function reset() {
+    console.log("Reset button has been pressed");
+}
 
 
 //Intervals
 function start() {
-    setInterval(runTimer, 10);
+    let currentTextLength = testArea.value.length;
+    if (currentTextLength === 0 && timerRunning === false) {
+        timerRunning = true;
+        interval = setInterval(runTimer, 10);
+    }
 }
 
 
@@ -58,3 +70,4 @@ function start() {
 //Event listeners
 testArea.addEventListener("keypress", start, false);
 testArea.addEventListener("keyup", spellCheck, false);
+resetButton.addEventListener("click", reset, false);
