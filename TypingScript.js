@@ -4,7 +4,6 @@ const resetButton = document.querySelector("#reset");
 const testArea = document.querySelector("#text-area");
 const testWrapper = document.querySelector(".test-wrapper");
 
-
 let timer = [0,0,0,0];
 let interval;
 let timerRunning = false;
@@ -37,10 +36,14 @@ function spellCheck() {
 
     if (currentText === originText) {
         testArea.style.borderColor = "#429890";
+        let successAudio = new Audio('/typingTest/sounds/Success.wav');
+        successAudio.play();
         clearInterval(interval);
     } else {
         if (currentText !== originTextSub) {
             testArea.style.borderColor = "orangered";
+            let errorAudio = new Audio('/typingTest/sounds/error.wav');
+            errorAudio.play();
         } else {
             testArea.style.borderColor = "lightblue";
         }
