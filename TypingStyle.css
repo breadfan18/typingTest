@@ -30,6 +30,42 @@ h1 {
     margin: 0;
 }
 
+#originText {
+    padding: 1em 1em;
+    background: aliceblue;
+    margin: 1em 0;
+}
+
+.test-wrapper {
+    height: 200%;
+    display: flex;
+}
+
+#test-area {
+    flex: 1;
+    border: 10px solid gray;
+    border-radius: 10px;
+}
+
+.meta {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1em;
+    flex-wrap: wrap;
+}
+
+#reset {
+    border: 10px solid orangered;
+    color: orangered;
+    padding: 20px
+}
+
+.timer {
+    font-size: 50px;
+    font-weight: bold;
+}
+
 
 
 
