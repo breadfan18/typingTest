@@ -18,7 +18,7 @@ function addLeadingZeroes(number) {
     return leadingZeroAdded;
 }
 
-//Start the timer
+//Build the clock
 function runTimer() {
     let currentTime = addLeadingZeroes(timer[0]) + ":" + addLeadingZeroes(timer[1]) + ":" + addLeadingZeroes(timer[2]);
     theTimer.innerHTML = currentTime;
@@ -47,25 +47,25 @@ function spellCheck() {
     }
 }
 
-
-
 //Reset Everything
 function reset() {
-    console.log("Reset button has been pressed");
+    timerRunning = false;
+    testArea.value = "";
+    testArea.style.borderColor = "gray";
+    clearInterval(interval);
+    timer = [0, 0, 0, 0];
+    theTimer.innerHTML = "00:00:00";
 }
 
-
-//Intervals
+//Start the timer
 function start() {
     let currentTextLength = testArea.value.length;
-    if (currentTextLength === 0 && timerRunning === false) {
+    console.log(currentTextLength);
+    if (currentTextLength === 0 && !timerRunning) {
         timerRunning = true;
         interval = setInterval(runTimer, 10);
     }
 }
-
-
-
 
 //Event listeners
 testArea.addEventListener("keypress", start, false);
