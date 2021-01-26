@@ -8,6 +8,8 @@ body {
     background: #0D1B2E;
     color: white;
     margin: 0;
+    font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+
 }
 
 h1 {
@@ -18,9 +20,10 @@ h1 {
 .test-area {
     max-width: 550px;
     margin: 0 auto;
-    font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
     font-size: 18px;
     line-height: 1.5;
+    font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+
 }
 
 .intro {
@@ -31,20 +34,23 @@ h1 {
 }
 
 #origin-text {
-    padding: 1em 1em;
+    padding: 0.4em 1em;
     background: aliceblue;
     margin: 1em 0;
 }
 
 .test-wrapper {
-    height: 200%;
     display: flex;
 }
 
-#test-area {
+.textArea {
+    height: 200px;
     flex: 1;
     border: 10px solid gray;
     border-radius: 10px;
+    font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
 }
 
 .meta {
@@ -73,6 +79,10 @@ h1 {
     background: orangered;
 }
 
+.textArea::placeholder {
+    font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+    font-size: 1em;
+}
 
 
 

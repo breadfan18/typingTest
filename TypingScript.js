@@ -1,7 +1,7 @@
 const originText = document.querySelector("#origin-text p").innerHTML;
 const theTimer = document.querySelector(".timer");
 const resetButton = document.querySelector("#reset");
-const testArea = document.querySelector("#test-area");
+const testArea = document.querySelector("#text-area");
 const testWrapper = document.querySelector(".test-wrapper");
 
 
@@ -42,17 +42,19 @@ function spellCheck() {
         if (currentText !== originTextSub) {
             testArea.style.borderColor = "orangered";
         } else {
-            testArea.style.borderColor = "blue";
+            testArea.style.borderColor = "lightblue";
         }
     }
 }
 
 //Reset Everything
 function reset() {
+    clearInterval(interval);
+    interval = null;
     timerRunning = false;
     testArea.value = "";
     testArea.style.borderColor = "gray";
-    clearInterval(interval);
+
     timer = [0, 0, 0, 0];
     theTimer.innerHTML = "00:00:00";
 }
