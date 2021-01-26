@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.masthead {
+    padding: 2em 2em;
+    background: #0D1B2E;
+    color: white;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.intro p,
+.test-area {
+    max-width: 550px;
+    margin: 0 auto;
+    font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.intro {
+    padding: 2em 2em;
+    background: #429890;
+    color: white;
+    margin: 0;
+}
+
+
+
+
+

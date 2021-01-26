@@ -6,31 +6,34 @@
     <link rel="stylesheet" href="TypingStyle.css">
 </head>
 <body>
-    <header>
+    <header class="masthead">
         <h1>Test Your Typing Speed</h1>
     </header>
 
-    <article class="description">
-        <p>This is a typing test. Your goal is to duplicate the provided text, EXACTLY, in the field
-            below. The timer starts when you start
-            typing, and only stops when you match this text exactly. Good Luck!</p>
-    </article>
 
-    <section>
-        <div id="originText">
-            <p>The text to test.</p>
-        </div>
-        <div class="test-wrapper">
-            <textArea id="test-area" class="testArea" rows=6 placeholder="The clock starts when you start typing.."></textArea>
-        </div>
+    <main class="mainBody">
+        <article class="intro">
+            <p>This is a typing test. Your goal is to duplicate the provided text, EXACTLY, in the field
+                below. The timer starts when you start
+                typing, and only stops when you match this text exactly. Good Luck!</p>
+        </article>
 
-        <div class="meta">
-            <section id="clock">
-                <div class="timer">00:00:00</div>
-            </section>
+        <section class="test-area">
+            <div id="originText">
+                <p>The text to test.</p>
+            </div>
+            <div class="test-wrapper">
+                <textArea id="test-area" class="testArea" rows=6 placeholder="The clock starts when you start typing.."></textArea>
+            </div>
 
-            <button id="reset">Start over</button>
-        </div>
-    </section>
+            <div class="meta">
+                <section id="clock">
+                    <div class="timer">00:00:00</div>
+                </section>
+
+                <button id="reset">Start over</button>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
