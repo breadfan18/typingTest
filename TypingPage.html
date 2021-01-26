@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Swaroop's Typing Test</title>
+    <link rel="stylesheet" href="TypingStyle.css">
 </head>
 <body>
     <header>
-        <h2>Test Your Typing Speed</h2>
+        <h1>Test Your Typing Speed</h1>
     </header>
 
     <article class="description">
@@ -23,9 +24,12 @@
             <textArea id="test-area" class="testArea" rows=6 placeholder="The clock starts when you start typing.."></textArea>
         </div>
 
-        <div id="meta">
-            <div id="timer">00:00:00</div>
-            <button class="reset">Start Over</button>
+        <div class="meta">
+            <section id="clock">
+                <div class="timer">00:00:00</div>
+            </section>
+
+            <button id="reset">Start over</button>
         </div>
     </section>
 </body>
