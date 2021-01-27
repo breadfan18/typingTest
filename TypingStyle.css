@@ -95,6 +95,11 @@ h1 {
     text-decoration: underline;
 }
 
+.separator {
+    border-left: 2px solid black;
+    opacity: 30%;
+}
+
 
 
 

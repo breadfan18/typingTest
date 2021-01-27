@@ -93,3 +93,10 @@ function countErrors(counterElement) {
 testArea.addEventListener("keypress", start, false);
 testArea.addEventListener("keyup", spellCheck, false);
 resetButton.addEventListener("click", reset, false);
+
+
+//Other ideas:
+//Give buttons or options for a category and display the selected category text block
+//Fix the counter issue - only count the errored characters. Right now, its counting eth as an error, after 1 error is made
+//show the error text as strikeout
+//Insert separators between timer, error count, and Reset button
