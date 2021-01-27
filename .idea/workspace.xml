@@ -19,7 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1e37e48-cda6-488f-90c0-82098db19a53" name="Default Changelist" comment="" />
+    <list default="true" id="a1e37e48-cda6-488f-90c0-82098db19a53" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TypingPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/TypingPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TypingScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/TypingScript.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TypingStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/TypingStyle.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,7 +91,7 @@
       <option name="presentableId" value="Default" />
       <updated>1611626814866</updated>
       <workItem from="1611626816091" duration="15394000" />
-      <workItem from="1611696781945" duration="2181000" />
+      <workItem from="1611696781945" duration="3041000" />
     </task>
     <servers />
   </component>
@@ -106,6 +111,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="-1556" y="149" width="1234" height="758" key="dock-window-1" timestamp="1611762050704">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-1556" y="149" width="1234" height="758" key="dock-window-1/0.0.1920.1200/-1920.0.1920.1080@-1920.0.1920.1080" timestamp="1611762050704" />
     <state x="-1295" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1611690344687">
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>

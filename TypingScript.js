@@ -4,6 +4,8 @@ const resetButton = document.querySelector("#reset");
 const testArea = document.querySelector("#text-area");
 const testWrapper = document.querySelector(".test-wrapper");
 
+let errorCounter = document.querySelector(".count").innerHTML;
+
 let timer = [0,0,0,0];
 let interval;
 let timerRunning = false;
