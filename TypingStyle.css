@@ -69,7 +69,7 @@ h1 {
     font-size: 20px;
 }
 
-.timer, .count {
+.timer, .count, .timerSection {
     font-size: 50px;
     font-weight: bold;
 }
@@ -83,15 +83,17 @@ h1 {
     font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
     font-size: 1em;
 }
-.count {
+
+.count, .timerSection {
     display: flex;
     flex-direction: column;
 }
 
-#errorHeader {
+#errorHeader, #timerHeader {
     font-size: 15px;
     flex-direction: row;
 }
+
 
 
 

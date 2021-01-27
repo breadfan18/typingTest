@@ -4,7 +4,7 @@ const resetButton = document.querySelector("#reset");
 const testArea = document.querySelector("#text-area");
 const testWrapper = document.querySelector(".test-wrapper");
 
-let errorCounter = document.querySelector(".count");
+let errorCounter = document.querySelector("#errorCount");
 
 
 let timer = [0,0,0,0];
@@ -62,6 +62,7 @@ function reset() {
     timer = [0, 0, 0, 0];
     theTimer.innerHTML = "00:00:00";
     errorCounter.innerHTML = "0";
+    errorCounter.style.color = "black";
 }
 
 //Start the timer
@@ -76,6 +77,7 @@ function start() {
 
 //Function to count the errors
 function countErrors(counterElement) {
+    errorCounter.style.color = "red";
     let counter = counterElement.innerHTML;
     let keyID = event.keyCode;
     if (keyID !== 8) {
