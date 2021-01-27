@@ -4,7 +4,8 @@ const resetButton = document.querySelector("#reset");
 const testArea = document.querySelector("#text-area");
 const testWrapper = document.querySelector(".test-wrapper");
 
-let errorCounter = document.querySelector(".count").innerHTML;
+let errorCounter = document.querySelector(".count");
+
 
 let timer = [0,0,0,0];
 let interval;
@@ -44,8 +45,7 @@ function spellCheck() {
     } else {
         if (currentText !== originTextSub) {
             testArea.style.borderColor = "orangered";
-            let errorAudio = new Audio('/typingTest/sounds/error.wav');
-            errorAudio.play();
+            errorCounter.innerHTML = countErrors(errorCounter);
         } else {
             testArea.style.borderColor = "lightblue";
         }
@@ -59,20 +59,33 @@ function reset() {
     timerRunning = false;
     testArea.value = "";
     testArea.style.borderColor = "gray";
-
     timer = [0, 0, 0, 0];
     theTimer.innerHTML = "00:00:00";
+    errorCounter.innerHTML = "0";
 }
 
 //Start the timer
 function start() {
     let currentTextLength = testArea.value.length;
-    console.log(currentTextLength);
     if (currentTextLength === 0 && !timerRunning) {
         timerRunning = true;
         interval = setInterval(runTimer, 10);
     }
 }
+
+
+//Function to count the errors
+function countErrors(counterElement, e) {
+    let counter = counterElement.innerHTML;
+    let keyID = event.keyCode;
+    if (keyID !== 8) {
+        counter++;
+        let errorAudio = new Audio('/typingTest/sounds/error.wav');
+        errorAudio.play();
+    }
+    return counter;
+}
+
 
 //Event listeners
 testArea.addEventListener("keypress", start, false);
