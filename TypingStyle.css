@@ -117,6 +117,12 @@ h1 {
 }
 
 
+.textSelection button:focus {
+    border: solid orangered 7px;
+    box-shadow: 0 0 5px #fff;
+}
+
+
 
 
 
