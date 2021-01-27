@@ -1,15 +1,42 @@
 const originText = document.querySelector("#origin-text p").innerHTML;
+let originTextElement = document.querySelector("#origin-text p");
 const theTimer = document.querySelector(".timer");
 const resetButton = document.querySelector("#reset");
 const testArea = document.querySelector("#text-area");
-const testWrapper = document.querySelector(".test-wrapper");
-
+const choiceButtons = document.querySelector(".textSelection");
 let errorCounter = document.querySelector("#errorCount");
+
+let textChoices = [
+    "Manchester United Football Club is a professional football club based in Old Trafford, Greater Manchester, England, that competes in the Premier League, the top flight of English football. Nicknamed \"the Red Devils\", the club was founded as Newton Heath LYR Football Club in 1878, changed its name to Manchester United in 1902 and moved to its current stadium, Old Trafford, in 1910.",
+    "Metallica is an American heavy metal band. The band was formed in 1981 in Los Angeles by vocalist/guitarist James Hetfield and drummer Lars Ulrich, and has been based in San Francisco for most of its career. The band's fast tempos, instrumentals and aggressive musicianship made them one of the founding \"big four\" bands of thrash metal",
+    "The history of Rome includes the history of the city of Rome as well as the civilisation of ancient Rome. Roman history has been influential on the modern world, especially in the history of the Catholic Church, and Roman law has influenced many modern legal systems. Roman history can be divided into many periods",
+    "Kathmandu is the capital and largest city of Nepal, with a population of around 1 million. Also known as the city of temples, the city stands at an elevation of approximately 1,400 metres (4,600 feet) above sea level in the bowl-shaped Kathmandu valley in central Nepal."
+];
 
 
 let timer = [0,0,0,0];
 let interval;
 let timerRunning = false;
+
+//select the text to display
+function selectText(e) {
+    let selection = e.target.innerHTML;
+    console.log(selection)
+    switch (selection) {
+        case "Manchester United":
+            originTextElement.innerHTML = textChoices[0];
+            break;
+        case "Metallica":
+            originTextElement.innerHTML = textChoices[1];
+            break;
+        case "Roman History":
+            originTextElement.innerHTML = textChoices[2];
+            break;
+        case "Kathmandu":
+            originTextElement.innerHTML = textChoices[3];
+            break;
+    }
+}
 
 //add leading zeroes to timer
 function addLeadingZeroes(number) {
@@ -93,7 +120,7 @@ function countErrors(counterElement) {
 testArea.addEventListener("keypress", start, false);
 testArea.addEventListener("keyup", spellCheck, false);
 resetButton.addEventListener("click", reset, false);
-
+choiceButtons.addEventListener("click", selectText, false);
 
 //Other ideas:
 //Give buttons or options for a category and display the selected category text block
