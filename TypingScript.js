@@ -1,4 +1,3 @@
-const originText = document.querySelector("#origin-text p").innerHTML;
 let originTextElement = document.querySelector("#origin-text p");
 const theTimer = document.querySelector(".timer");
 const resetButton = document.querySelector("#reset");
@@ -10,9 +9,9 @@ let textChoices = [
     "Manchester United Football Club is a professional football club based in Old Trafford, Greater Manchester, England, that competes in the Premier League, the top flight of English football. Nicknamed \"the Red Devils\", the club was founded as Newton Heath LYR Football Club in 1878, changed its name to Manchester United in 1902 and moved to its current stadium, Old Trafford, in 1910.",
     "Metallica is an American heavy metal band. The band was formed in 1981 in Los Angeles by vocalist/guitarist James Hetfield and drummer Lars Ulrich, and has been based in San Francisco for most of its career. The band's fast tempos, instrumentals and aggressive musicianship made them one of the founding \"big four\" bands of thrash metal",
     "The history of Rome includes the history of the city of Rome as well as the civilisation of ancient Rome. Roman history has been influential on the modern world, especially in the history of the Catholic Church, and Roman law has influenced many modern legal systems. Roman history can be divided into many periods",
-    "Kathmandu is the capital and largest city of Nepal, with a population of around 1 million. Also known as the city of temples, the city stands at an elevation of approximately 1,400 metres (4,600 feet) above sea level in the bowl-shaped Kathmandu valley in central Nepal."
+    "Kathmandu is the capital and largest city of Nepal, with a population of around 1 million. Also known as the city of temples, the city stands at an elevation of approximately 1,400 metres (4,600 feet) above sea level in the bowl-shaped Kathmandu valley in central Nepal.",
+    "Click one of the category boxes to get your desired text."
 ];
-
 
 let timer = [0,0,0,0];
 let interval;
@@ -62,6 +61,8 @@ function runTimer() {
 //Text Validation
 function spellCheck() {
     let currentText = testArea.value;
+    let originText = document.querySelector("#origin-text p").innerHTML;
+
     let originTextSub = originText.substring(0, currentText.length);
 
     if (currentText === originText) {
@@ -90,6 +91,7 @@ function reset() {
     theTimer.innerHTML = "00:00:00";
     errorCounter.innerHTML = "0";
     errorCounter.style.color = "black";
+    originTextElement.innerHTML = textChoices[4];
 }
 
 //Start the timer
