@@ -75,7 +75,7 @@ function start() {
 
 
 //Function to count the errors
-function countErrors(counterElement, e) {
+function countErrors(counterElement) {
     let counter = counterElement.innerHTML;
     let keyID = event.keyCode;
     if (keyID !== 8) {

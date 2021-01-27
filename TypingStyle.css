@@ -83,6 +83,17 @@ h1 {
     font-family: 'Source Sans Pro', 'Helvetica', Arial, sans-serif;
     font-size: 1em;
 }
+.count {
+    display: flex;
+    flex-direction: column;
+}
+
+#errorHeader {
+    font-size: 15px;
+    flex-direction: row;
+}
+
+
 
 
 
