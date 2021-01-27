@@ -57,7 +57,7 @@ h1 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 1em;
+    margin: 1em 0.2em;
     flex-wrap: wrap;
 }
 
@@ -92,6 +92,7 @@ h1 {
 #errorHeader, #timerHeader {
     font-size: 15px;
     flex-direction: row;
+    text-decoration: underline;
 }
 
 
