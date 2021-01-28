@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/breadfan18/typingTest/issues"
   },
-  "homepage": "https://github.com/breadfan18/typingTest#readme"
+  "homepage": "https://github.com/breadfan18/typingTest#readme",
+  "devDependencies": {
+    "eslint": "^7.18.0"
+  }
 }

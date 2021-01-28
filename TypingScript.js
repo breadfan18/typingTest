@@ -1,6 +1,6 @@
 let originTextElement = document.querySelector("#origin-text p");
 const theTimer = document.querySelector(".timer");
-const resetButton = document.querySelector("#reset");
+const resetButton = document.querySelector("#reset")
 const testArea = document.querySelector("#text-area");
 const choiceButtons = document.querySelector(".textSelection");
 let errorCounter = document.querySelector("#errorCount");
