@@ -20,7 +20,6 @@ let timerRunning = false;
 //select the text to display
 function selectText(e) {
     let selection = e.target.innerHTML;
-    console.log(selection)
     switch (selection) {
         case "Manchester United":
             originTextElement.innerHTML = textChoices[0];
@@ -62,7 +61,6 @@ function runTimer() {
 function spellCheck() {
     let currentText = testArea.value;
     let originText = document.querySelector("#origin-text p").innerHTML;
-
     let originTextSub = originText.substring(0, currentText.length);
 
     if (currentText === originText) {
@@ -125,7 +123,6 @@ resetButton.addEventListener("click", reset, false);
 choiceButtons.addEventListener("click", selectText, false);
 
 //Other ideas:
-//Give buttons or options for a category and display the selected category text block
 //Fix the counter issue - only count the errored characters. Right now, its counting eth as an error, after 1 error is made
 //show the error text as strikeout
-//Insert separators between timer, error count, and Reset button
+//How to highlight of the substring of the origin Text that has already been typed?
