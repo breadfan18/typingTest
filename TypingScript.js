@@ -63,6 +63,8 @@ function spellCheck() {
     let originText = document.querySelector("#origin-text p").innerHTML;
     let originTextSub = originText.substring(0, currentText.length);
 
+    console.log("This is a test")
+
     if (currentText === originText) {
         testArea.style.borderColor = "#429890";
         let successAudio = new Audio('/typingTest/sounds/Success.wav');
