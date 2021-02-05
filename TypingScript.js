@@ -7,6 +7,8 @@ const testArea = document.querySelector("#text-area");
 const choiceButtons = document.querySelector(".textSelection");
 let errorCounter = document.querySelector("#errorCount");
 
+let blahText = null;
+
 
 let textChoices = [
     "Manchester United Football Club is a professional football club based in Old Trafford, Greater Manchester, England, that competes in the Premier League, the top flight of English football. Nicknamed \"the Red Devils\", the club was founded as Newton Heath LYR Football Club in 1878, changed its name to Manchester United in 1902 and moved to its current stadium, Old Trafford, in 1910.",
@@ -27,15 +29,19 @@ function selectText(e) {
     switch (selection) {
         case "Manchester United":
             originTextElement.innerHTML = textChoices[0];
+            blahText = textChoices[0];
             break;
         case "Metallica":
             originTextElement.innerHTML = textChoices[1];
+            blahText = textChoices[1];
             break;
         case "Roman History":
             originTextElement.innerHTML = textChoices[2];
+            blahText = textChoices[2];
             break;
         case "Kathmandu":
             originTextElement.innerHTML = textChoices[3];
+            blahText = textChoices[3];
             break;
     }
 }
@@ -69,28 +75,26 @@ function runTimer() {
 
 
 
-let originText = document.querySelector("#original").innerText;
-
-
-
-
 //Text Validation
 function spellCheck() {
+    console.log(blahText);
+
     let currentText = testArea.value;
+    // let originText = document.querySelector("#original").innerText;
+    // console.log(originText)
 
+    let originTextSub = blahText.substring(0, currentText.length);
+    // console.log("Original: " + currentText);
 
-    let originTextSub = originText.substring(0, currentText.length);
-    console.log("Original: " + currentText);
-
-    let remainingText = originText.substring(originTextSub.length, originText.length);
-    console.log("Remaining: " + remainingText);
+    let remainingText = blahText.substring(originTextSub.length, blahText.length);
+    // console.log("Remaining: " + remainingText);
     console.log("");
 
     highlightSpan.innerText = currentText;
 
     originTextElement.innerHTML = remainingText;
 
-    if (currentText === originText) {
+    if (currentText === blahText) {
         testArea.style.borderColor = "#429890";
         let successAudio = new Audio('/typingTest/sounds/Success.wav');
         successAudio.play();
@@ -117,6 +121,7 @@ function reset() {
     errorCounter.innerHTML = "0";
     errorCounter.style.color = "black";
     originTextElement.innerHTML = textChoices[4];
+    highlightSpan.innerHTML = "";
 }
 
 //Start the timer
