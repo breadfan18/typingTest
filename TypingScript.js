@@ -86,13 +86,13 @@ function spellCheck() {
     let originTextSub = blah.substring(0, currentText.length);
     console.log("Original: " + currentText);
 
-    let remainingText = originText.substring(originTextSub.length, originText.length);
+    let remainingText = blah.substring(originTextSub.length, blah.length);
     console.log("Remaining: " + remainingText);
     console.log("");
 
-    highlightSpan.innerHTML = currentText;
+    highlightSpan.innerText = currentText;
 
-    // originTextElement.innerHTML = remainingText;
+    originTextElement.innerHTML = remainingText;
 
     if (currentText === originText) {
         testArea.style.borderColor = "#429890";
