@@ -94,7 +94,7 @@ function spellCheck() {
 
     originTextElement.innerHTML = remainingText;
 
-    if (currentText === originText) {
+    if (currentText === blah) {
         testArea.style.borderColor = "#429890";
         let successAudio = new Audio('/typingTest/sounds/Success.wav');
         successAudio.play();
