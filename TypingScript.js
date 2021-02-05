@@ -1,11 +1,12 @@
-let originTextElement = document.querySelector("#origin-text p");
+let originTextElement = document.querySelector("#original");
+let highlightSpan = document.querySelector("#typingHighlight");
+
 const theTimer = document.querySelector(".timer");
 const resetButton = document.querySelector("#reset")
 const testArea = document.querySelector("#text-area");
 const choiceButtons = document.querySelector(".textSelection");
 let errorCounter = document.querySelector("#errorCount");
 
-let highlightSpan = document.querySelector("#typingHighlight");
 
 let textChoices = [
     "Manchester United Football Club is a professional football club based in Old Trafford, Greater Manchester, England, that competes in the Premier League, the top flight of English football. Nicknamed \"the Red Devils\", the club was founded as Newton Heath LYR Football Club in 1878, changed its name to Manchester United in 1902 and moved to its current stadium, Old Trafford, in 1910.",
@@ -21,6 +22,7 @@ let timerRunning = false;
 
 //select the text to display
 function selectText(e) {
+    highlightSpan.innerHTML = "";
     let selection = e.target.innerHTML;
     switch (selection) {
         case "Manchester United":
@@ -67,15 +69,9 @@ function runTimer() {
 
 
 
+let originText = document.querySelector("#original").innerText;
 
 
-
-
-
-
-
-let originText = document.querySelector("#origin-text p").innerText;
-const blah = document.querySelector("#origin-text p").innerText;
 
 
 //Text Validation
@@ -83,10 +79,10 @@ function spellCheck() {
     let currentText = testArea.value;
 
 
-    let originTextSub = blah.substring(0, currentText.length);
+    let originTextSub = originText.substring(0, currentText.length);
     console.log("Original: " + currentText);
 
-    let remainingText = blah.substring(originTextSub.length, blah.length);
+    let remainingText = originText.substring(originTextSub.length, originText.length);
     console.log("Remaining: " + remainingText);
     console.log("");
 
@@ -94,7 +90,7 @@ function spellCheck() {
 
     originTextElement.innerHTML = remainingText;
 
-    if (currentText === blah) {
+    if (currentText === originText) {
         testArea.style.borderColor = "#429890";
         let successAudio = new Audio('/typingTest/sounds/Success.wav');
         successAudio.play();

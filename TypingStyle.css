@@ -129,7 +129,7 @@ h1 {
 }
 
 #typingHighlight {
-    color: red;
+    background-color: rgba(220, 223, 58, 0.71);
 }
 
 
@@ -137,6 +137,10 @@ h1 {
 
 
 
+mark{
+    background: orange;
+    color: black;
+}
 
 
 
