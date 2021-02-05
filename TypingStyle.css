@@ -128,9 +128,10 @@ h1 {
     box-shadow: 0 0 5px #fff;
 }
 
-test {
-
+#typingHighlight {
+    color: red;
 }
+
 
 
 

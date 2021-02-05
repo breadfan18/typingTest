@@ -5,6 +5,8 @@ const testArea = document.querySelector("#text-area");
 const choiceButtons = document.querySelector(".textSelection");
 let errorCounter = document.querySelector("#errorCount");
 
+let highlightSpan = document.querySelector("#typingHighlight");
+
 let textChoices = [
     "Manchester United Football Club is a professional football club based in Old Trafford, Greater Manchester, England, that competes in the Premier League, the top flight of English football. Nicknamed \"the Red Devils\", the club was founded as Newton Heath LYR Football Club in 1878, changed its name to Manchester United in 1902 and moved to its current stadium, Old Trafford, in 1910.",
     "Metallica is an American heavy metal band. The band was formed in 1981 in Los Angeles by vocalist/guitarist James Hetfield and drummer Lars Ulrich, and has been based in San Francisco for most of its career. The band's fast tempos, instrumentals and aggressive musicianship made them one of the founding \"big four\" bands of thrash metal",
@@ -57,13 +59,40 @@ function runTimer() {
  }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let originText = document.querySelector("#origin-text p").innerText;
+const blah = document.querySelector("#origin-text p").innerText;
+
+
 //Text Validation
 function spellCheck() {
     let currentText = testArea.value;
-    let originText = document.querySelector("#origin-text p").innerHTML;
-    let originTextSub = originText.substring(0, currentText.length);
 
-    console.log("This is a test")
+
+    let originTextSub = blah.substring(0, currentText.length);
+    console.log("Original: " + currentText);
+
+    let remainingText = originText.substring(originTextSub.length, originText.length);
+    console.log("Remaining: " + remainingText);
+    console.log("");
+
+    highlightSpan.innerHTML = currentText;
+
+    // originTextElement.innerHTML = remainingText;
 
     if (currentText === originText) {
         testArea.style.borderColor = "#429890";
