@@ -1,13 +1,11 @@
 let originTextElement = document.querySelector("#original");
 let highlightSpan = document.querySelector("#typingHighlight");
-
 const theTimer = document.querySelector(".timer");
 const resetButton = document.querySelector("#reset")
 const testArea = document.querySelector("#text-area");
 const choiceButtons = document.querySelector(".textSelection");
 let errorCounter = document.querySelector("#errorCount");
-
-let blahText = null;
+let originTextCopy = null;
 
 
 let textChoices = [
@@ -29,19 +27,19 @@ function selectText(e) {
     switch (selection) {
         case "Manchester United":
             originTextElement.innerHTML = textChoices[0];
-            blahText = textChoices[0];
+            originTextCopy = textChoices[0];
             break;
         case "Metallica":
             originTextElement.innerHTML = textChoices[1];
-            blahText = textChoices[1];
+            originTextCopy = textChoices[1];
             break;
         case "Roman History":
             originTextElement.innerHTML = textChoices[2];
-            blahText = textChoices[2];
+            originTextCopy = textChoices[2];
             break;
         case "Kathmandu":
             originTextElement.innerHTML = textChoices[3];
-            blahText = textChoices[3];
+            originTextCopy = textChoices[3];
             break;
     }
 }
@@ -66,35 +64,15 @@ function runTimer() {
     timer[2] = Math.floor(timer[3] - (timer[1] * 100) - (timer[0] * 6000));
  }
 
-
-
-
-
-
-
-
-
-
 //Text Validation
 function spellCheck() {
-    console.log(blahText);
-
     let currentText = testArea.value;
-    // let originText = document.querySelector("#original").innerText;
-    // console.log(originText)
-
-    let originTextSub = blahText.substring(0, currentText.length);
-    // console.log("Original: " + currentText);
-
-    let remainingText = blahText.substring(originTextSub.length, blahText.length);
-    // console.log("Remaining: " + remainingText);
-    console.log("");
-
+    let originTextSub = originTextCopy.substring(0, currentText.length);
+    let remainingText = originTextCopy.substring(originTextSub.length, originTextCopy.length);
     highlightSpan.innerText = currentText;
-
     originTextElement.innerHTML = remainingText;
 
-    if (currentText === blahText) {
+    if (currentText === originTextCopy) {
         testArea.style.borderColor = "#429890";
         let successAudio = new Audio('/typingTest/sounds/Success.wav');
         successAudio.play();
@@ -155,6 +133,6 @@ resetButton.addEventListener("click", reset, false);
 choiceButtons.addEventListener("click", selectText, false);
 
 //Other ideas:
-//Fix the counter issue - only count the errored characters. Right now, its counting eth as an error, after 1 error is made
-//show the error text as strikeout
-//How to highlight of the substring of the origin Text that has already been typed?
+//How to highlight of the substring of the origin Text that has already been typed? ---> DONE
+//show the error text as red and strikeout ---> NEXT
+//Fix the issue where you can select different category button in the middle of timerRunning.
