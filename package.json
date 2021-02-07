@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/breadfan18/typingTest#readme",
   "devDependencies": {
-    "eslint": "^7.18.0"
+    "eslint": "^7.18.0",
+    "mark.js": "^8.11.1"
   }
 }
