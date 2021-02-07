@@ -64,9 +64,12 @@ function runTimer() {
     timer[2] = Math.floor(timer[3] - (timer[1] * 100) - (timer[0] * 6000));
  }
 
+let charIndex = 0;
+
 //Text Validation
 function spellCheck() {
     let currentText = testArea.value;
+
     let originTextSub = originTextCopy.substring(0, currentText.length);
     let remainingText = originTextCopy.substring(originTextSub.length, originTextCopy.length);
     highlightSpan.innerText = currentText;
@@ -79,12 +82,21 @@ function spellCheck() {
         clearInterval(interval);
     } else {
         if (currentText !== originTextSub) {
+            console.log(currentText);
+            let currentCharActual = currentText.charAt(charIndex-1);
+            console.log("Actual: " + currentCharActual)
+
+            let currentCharExpected = originTextCopy.charAt(charIndex-1);
+            console.log("Expected: " + currentCharExpected);
+
+            /////above this comment is new code
             testArea.style.borderColor = "orangered";
             errorCounter.innerHTML = countErrors(errorCounter);
         } else {
             testArea.style.borderColor = "lightblue";
         }
     }
+    charIndex++;
 }
 
 //Reset Everything
