@@ -24,6 +24,7 @@ let timerRunning = false;
 function selectText(e) {
     highlightSpan.innerHTML = "";
     testArea.value = "";
+    originTextElement.style.color = "black";
     let selection = e.target.innerHTML;
     switch (selection) {
         case "Manchester United":
@@ -63,7 +64,7 @@ function runTimer() {
     timer[0] = Math.floor((timer[3]/100)/60);
     timer[1] = Math.floor((timer[3]/100) - (timer[0] * 60));
     timer[2] = Math.floor(timer[3] - (timer[1] * 100) - (timer[0] * 6000));
- }
+}
 
 let charIndex = 0;
 
@@ -121,7 +122,10 @@ function reset() {
 
 //Start the timer
 function start() {
-    if (originTextElement.innerHTML !== textChoices[4]) {
+    if (originTextElement.innerHTML === textChoices[4]) {
+        originTextElement.style.color = "red";
+    }
+    else {
         let currentTextLength = testArea.value.length;
         if (currentTextLength === 0 && !timerRunning) {
             timerRunning = true;
