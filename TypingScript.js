@@ -57,8 +57,7 @@ function addLeadingZeroes(number) {
 
 //Build the clock
 function runTimer() {
-    let currentTime = addLeadingZeroes(timer[0]) + ":" + addLeadingZeroes(timer[1]) + ":" + addLeadingZeroes(timer[2]);
-    theTimer.innerHTML = currentTime;
+    theTimer.innerHTML = addLeadingZeroes(timer[0]) + ":" + addLeadingZeroes(timer[1]) + ":" + addLeadingZeroes(timer[2]);
     timer[3]++;
 
     timer[0] = Math.floor((timer[3]/100)/60);
@@ -66,12 +65,12 @@ function runTimer() {
     timer[2] = Math.floor(timer[3] - (timer[1] * 100) - (timer[0] * 6000));
 }
 
+
+
 let charIndex = 0;
 
 //Text Validation
 function spellCheck() {
-
-
     if (originTextElement.innerHTML !== textChoices[4]) {
         let currentText = testArea.value;
 
