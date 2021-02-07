@@ -23,6 +23,7 @@ let timerRunning = false;
 //select the text to display
 function selectText(e) {
     highlightSpan.innerHTML = "";
+    testArea.value = "";
     let selection = e.target.innerHTML;
     switch (selection) {
         case "Manchester United":
@@ -68,35 +69,39 @@ let charIndex = 0;
 
 //Text Validation
 function spellCheck() {
-    let currentText = testArea.value;
 
-    let originTextSub = originTextCopy.substring(0, currentText.length);
-    let remainingText = originTextCopy.substring(originTextSub.length, originTextCopy.length);
-    highlightSpan.innerText = currentText;
-    originTextElement.innerHTML = remainingText;
 
-    if (currentText === originTextCopy) {
-        testArea.style.borderColor = "#429890";
-        let successAudio = new Audio('/typingTest/sounds/Success.wav');
-        successAudio.play();
-        clearInterval(interval);
-    } else {
-        if (currentText !== originTextSub) {
-            console.log(currentText);
-            let currentCharActual = currentText.charAt(charIndex-1);
-            console.log("Actual: " + currentCharActual)
+    if (originTextElement.innerHTML !== textChoices[4]) {
+        let currentText = testArea.value;
 
-            let currentCharExpected = originTextCopy.charAt(charIndex-1);
-            console.log("Expected: " + currentCharExpected);
+        let originTextSub = originTextCopy.substring(0, currentText.length);
+        let remainingText = originTextCopy.substring(originTextSub.length, originTextCopy.length);
+        highlightSpan.innerText = currentText;
+        originTextElement.innerHTML = remainingText;
 
-            /////above this comment is new code
-            testArea.style.borderColor = "orangered";
-            errorCounter.innerHTML = countErrors(errorCounter);
+        if (currentText === originTextCopy) {
+            testArea.style.borderColor = "#429890";
+            let successAudio = new Audio('/typingTest/sounds/Success.wav');
+            successAudio.play();
+            clearInterval(interval);
         } else {
-            testArea.style.borderColor = "lightblue";
+            if (currentText !== originTextSub) {
+                console.log(currentText);
+                let currentCharActual = currentText.charAt(charIndex - 1);
+                console.log("Actual: " + currentCharActual)
+
+                let currentCharExpected = originTextCopy.charAt(charIndex - 1);
+                console.log("Expected: " + currentCharExpected);
+
+                /////above this comment is new code
+                testArea.style.borderColor = "orangered";
+                errorCounter.innerHTML = countErrors(errorCounter);
+            } else {
+                testArea.style.borderColor = "lightblue";
+            }
         }
+        charIndex++;
     }
-    charIndex++;
 }
 
 //Reset Everything
@@ -116,10 +121,12 @@ function reset() {
 
 //Start the timer
 function start() {
-    let currentTextLength = testArea.value.length;
-    if (currentTextLength === 0 && !timerRunning) {
-        timerRunning = true;
-        interval = setInterval(runTimer, 10);
+    if (originTextElement.innerHTML !== textChoices[4]) {
+        let currentTextLength = testArea.value.length;
+        if (currentTextLength === 0 && !timerRunning) {
+            timerRunning = true;
+            interval = setInterval(runTimer, 10);
+        }
     }
 }
 
