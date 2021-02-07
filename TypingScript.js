@@ -126,6 +126,7 @@ function countErrors(counterElement) {
 }
 
 
+
 //Event listeners
 testArea.addEventListener("keypress", start, false);
 testArea.addEventListener("keyup", spellCheck, false);
