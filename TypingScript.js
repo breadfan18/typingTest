@@ -121,6 +121,7 @@ function reset() {
     errorCounter.style.color = "black";
     originTextElement.innerHTML = textChoices[4];
     highlightSpan.innerHTML = "";
+
 }
 
 //Start the timer
@@ -152,7 +153,13 @@ function countErrors(counterElement) {
     return counter;
 }
 
-
+//stopped here!!
+function enableAllChoiceButtons() {
+    let allButtons = document.querySelectorAll(".textSelection button");
+    for (let i = 0; i < allButtons.length; i++) {
+        document.querySelector("#");
+    }
+}
 
 function disableUnselectedButtons() {
     console.log(selectedButtonID);
