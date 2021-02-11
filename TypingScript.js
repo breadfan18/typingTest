@@ -157,15 +157,21 @@ function countErrors(counterElement) {
 function enableAllChoiceButtons() {
     let allButtons = document.querySelectorAll(".textSelection button");
     for (let i = 0; i < allButtons.length; i++) {
-        let currentElement =  document.querySelector("#" + allButtons[i].getAttribute("id"));
-        currentElement.enabled = true;
-        currentElement.style.color = "black";
-        currentElement.style.backgroundColor = "rgb(239,239,239)";
+        let currentID = allButtons[i].getAttribute("id");
+
+
+        let currentElementID =  document.querySelector("#" + currentID);
+        console.log("Current: "+ currentElementID.toString());
+        // console.log("Selected: " + selectedButtonID);
+        if (currentElementID !== selectedButtonID) {
+            currentElementID.disabled = false;
+            currentElementID.style.color = "black";
+            currentElementID.style.backgroundColor = "rgb(239,239,239)";
+        }
     }
 }
 
 function disableUnselectedButtons() {
-    console.log(selectedButtonID);
     let allButtons = document.querySelectorAll(".textSelection button");
     let selectedButton = document.querySelector("#" + selectedButtonID);
     selectedButton.style.backgroundColor = "#429890";
@@ -180,13 +186,12 @@ function disableUnselectedButtons() {
 }
 
 
-
 //Event listeners
 testArea.addEventListener("keypress", start, false);
 testArea.addEventListener("keyup", spellCheck, false);
 resetButton.addEventListener("click", reset, false);
 choiceButtons.addEventListener("click", selectText, false);
-// testArea.addEventListener("keypress", disableUnselectedButtons, false);
+
 
 //Other ideas:
 //How to highlight of the substring of the origin Text that has already been typed? ---> DONE
