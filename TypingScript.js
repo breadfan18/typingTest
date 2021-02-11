@@ -198,6 +198,8 @@ choiceButtons.addEventListener("click", selectText, false);
 //Fix the issue where you can select different category button in the middle of timerRunning. ---> DONE
 //----Couple of bugs here:
 //--------After reset button is pressed, the hover doesnt work anymore, the buttons that were disabled are disabled still.
+//----------------hover works now, and button styling is good, but now after Reset is pressed and then another button
+//----------------is selected, then only two buttons get disabled and so on...need reset function to work better.
 //--------After resetting if user types without pressing button, it styles the previously selected box as selected again.
 //show the error text as red and strikeout ---> NEXT
 
