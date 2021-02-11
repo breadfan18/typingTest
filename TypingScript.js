@@ -156,17 +156,18 @@ function countErrors(counterElement) {
 
 function enableAllChoiceButtons() {
     let allButtons = document.querySelectorAll(".textSelection button");
+    let selectedElement = document.querySelector("#" + selectedButtonID);
+    selectedElement.classList.add("normalButton");
+
+
     for (let i = 0; i < allButtons.length; i++) {
-        let currentID = allButtons[i].getAttribute("id");
+        let currentId =  allButtons[i].getAttribute("id");
 
-
-        let currentElementID =  document.querySelector("#" + currentID);
-        console.log("Current: "+ currentElementID.toString());
-        // console.log("Selected: " + selectedButtonID);
-        if (currentElementID !== selectedButtonID) {
-            currentElementID.disabled = false;
-            currentElementID.style.color = "black";
-            currentElementID.style.backgroundColor = "rgb(239,239,239)";
+        if (currentId !== selectedButtonID) {
+            let currentElement = document.querySelector("#" + allButtons[i].getAttribute("id"));
+            currentElement.disabled = false;
+            currentElement.style.color = "";
+            currentElement.style.backgroundColor = "";
         }
     }
 }
@@ -174,8 +175,7 @@ function enableAllChoiceButtons() {
 function disableUnselectedButtons() {
     let allButtons = document.querySelectorAll(".textSelection button");
     let selectedButton = document.querySelector("#" + selectedButtonID);
-    selectedButton.style.backgroundColor = "#429890";
-    selectedButton.style.color = "white";
+    selectedButton.classList.add("selectedButtonWhileTyping");
 
     for (let i = 0; i < allButtons.length; i++) {
         let currentButtonId = allButtons[i].getAttribute("id");

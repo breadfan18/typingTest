@@ -138,4 +138,16 @@ h1 {
 }
 
 
+.selectedButtonWhileTyping {
+    background-color: #429890;
+    color: white;
+}
+
+
+.normalButton {
+    background-color: rgb(239, 239, 239);
+    color: black;
+}
+
+
 
