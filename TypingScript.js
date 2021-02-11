@@ -160,4 +160,4 @@ choiceButtons.addEventListener("click", selectText, false);
 //show the error text as red and strikeout ---> NEXT
 //Fix the issue where you can select different category button in the middle of timerRunning.
 
-//This is strikeout
+//This is strikeout branch
