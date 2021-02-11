@@ -118,7 +118,6 @@ h1 {
 }
 
 .textSelection button:hover:enabled {
-    /*border: solid orangered 5px;*/
     background-color: #429890;
     color: white;
     box-shadow: 0 0 5px #fff;
@@ -126,7 +125,7 @@ h1 {
 
 
 .textSelection button:focus {
-    border: solid orangered 7px;
+    /*border: solid orangered 7px;*/
     box-shadow: 0 0 5px #fff;
     background-color: #429890;
     color: white;

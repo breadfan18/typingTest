@@ -121,6 +121,7 @@ function reset() {
     errorCounter.style.color = "black";
     originTextElement.innerHTML = textChoices[4];
     highlightSpan.innerHTML = "";
+    enableAllChoiceButtons();
 
 }
 
@@ -153,11 +154,13 @@ function countErrors(counterElement) {
     return counter;
 }
 
-//stopped here!!
 function enableAllChoiceButtons() {
     let allButtons = document.querySelectorAll(".textSelection button");
     for (let i = 0; i < allButtons.length; i++) {
-        document.querySelector("#");
+        let currentElement =  document.querySelector("#" + allButtons[i].getAttribute("id"));
+        currentElement.enabled = true;
+        currentElement.style.color = "black";
+        currentElement.style.backgroundColor = "rgb(239,239,239)";
     }
 }
 
@@ -187,7 +190,10 @@ choiceButtons.addEventListener("click", selectText, false);
 
 //Other ideas:
 //How to highlight of the substring of the origin Text that has already been typed? ---> DONE
+//Fix the issue where you can select different category button in the middle of timerRunning. ---> DONE
+//----Couple of bugs here:
+//--------After reset button is pressed, the hover doesnt work anymore, the buttons that were disabled are disabled still.
+//--------After resetting if user types without pressing button, it styles the previously selected box as selected again.
 //show the error text as red and strikeout ---> NEXT
-//Fix the issue where you can select different category button in the middle of timerRunning.
 
 //This is strikeout branch
