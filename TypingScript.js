@@ -6,7 +6,7 @@ const testArea = document.querySelector("#text-area");
 const choiceButtons = document.querySelector(".textSelection");
 let errorCounter = document.querySelector("#errorCount");
 let originTextCopy = null;
-
+let selectedButtonID = null;
 
 let textChoices = [
     "Manchester United Football Club is a professional football club based in Old Trafford, Greater Manchester, England, that competes in the Premier League, the top flight of English football. Nicknamed \"the Red Devils\", the club was founded as Newton Heath LYR Football Club in 1878, changed its name to Manchester United in 1902 and moved to its current stadium, Old Trafford, in 1910.",
@@ -30,21 +30,26 @@ function selectText(e) {
         case "Manchester United":
             originTextElement.innerHTML = textChoices[0];
             originTextCopy = textChoices[0];
+            selectedButtonID = "manutd";
             break;
         case "Metallica":
             originTextElement.innerHTML = textChoices[1];
             originTextCopy = textChoices[1];
+            selectedButtonID = "tallica";
             break;
         case "Roman History":
             originTextElement.innerHTML = textChoices[2];
             originTextCopy = textChoices[2];
+            selectedButtonID = "roman";
             break;
         case "Kathmandu":
             originTextElement.innerHTML = textChoices[3];
             originTextCopy = textChoices[3];
+            selectedButtonID = "ktm";
             break;
     }
 }
+
 
 //add leading zeroes to timer
 function addLeadingZeroes(number) {
@@ -64,7 +69,6 @@ function runTimer() {
     timer[1] = Math.floor((timer[3]/100) - (timer[0] * 60));
     timer[2] = Math.floor(timer[3] - (timer[1] * 100) - (timer[0] * 6000));
 }
-
 
 
 let charIndex = 0;
@@ -117,10 +121,13 @@ function reset() {
     errorCounter.style.color = "black";
     originTextElement.innerHTML = textChoices[4];
     highlightSpan.innerHTML = "";
+    enableAllChoiceButtons();
+
 }
 
 //Start the timer
 function start() {
+    disableUnselectedButtons();
     if (originTextElement.innerHTML === textChoices[4]) {
         originTextElement.style.color = "red";
     }
@@ -147,6 +154,36 @@ function countErrors(counterElement) {
     return counter;
 }
 
+function enableAllChoiceButtons() {
+    let allButtons = document.querySelectorAll(".textSelection button");
+    let selectedElement = document.querySelector("#" + selectedButtonID);
+    selectedElement.classList.add("normalButton");
+
+
+    for (let i = 0; i < allButtons.length; i++) {
+        let currentId =  allButtons[i].getAttribute("id");
+
+        if (currentId !== selectedButtonID) {
+            let currentElement = document.querySelector("#" + allButtons[i].getAttribute("id"));
+            currentElement.disabled = false;
+            currentElement.style.color = "";
+            currentElement.style.backgroundColor = "";
+        }
+    }
+}
+
+function disableUnselectedButtons() {
+    let allButtons = document.querySelectorAll(".textSelection button");
+    let selectedButton = document.querySelector("#" + selectedButtonID);
+    selectedButton.classList.add("selectedButtonWhileTyping");
+
+    for (let i = 0; i < allButtons.length; i++) {
+        let currentButtonId = allButtons[i].getAttribute("id");
+        if (currentButtonId !== selectedButtonID) {
+            document.querySelector("#" + currentButtonId).disabled = true;
+        }
+    }
+}
 
 
 //Event listeners
@@ -155,9 +192,13 @@ testArea.addEventListener("keyup", spellCheck, false);
 resetButton.addEventListener("click", reset, false);
 choiceButtons.addEventListener("click", selectText, false);
 
+
 //Other ideas:
 //How to highlight of the substring of the origin Text that has already been typed? ---> DONE
+//Fix the issue where you can select different category button in the middle of timerRunning. ---> DONE
+//----Couple of bugs here:
+//--------After reset button is pressed, the hover doesnt work anymore, the buttons that were disabled are disabled still.
+//----------------hover works now, and button styling is good, but now after Reset is pressed and then another button
+//----------------is selected, then only two buttons get disabled and so on...need reset function to work better.
+//--------After resetting if user types without pressing button, it styles the previously selected box as selected again.
 //show the error text as red and strikeout ---> NEXT
-//Fix the issue where you can select different category button in the middle of timerRunning.
-
-//This is main

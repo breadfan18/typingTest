@@ -117,21 +117,36 @@ h1 {
     min-height: 90px;
 }
 
-.textSelection button:hover {
-    border: solid orangered 5px;
+.textSelection button:hover:enabled {
+    background-color: #429890;
+    color: white;
     box-shadow: 0 0 5px #fff;
 }
 
 
 .textSelection button:focus {
-    border: solid orangered 7px;
+    /*border: solid orangered 7px;*/
     box-shadow: 0 0 5px #fff;
+    background-color: #429890;
+    color: white;
 }
 
 #typingHighlight {
     background-color: rgba(236, 84, 40, 0.5);
     transition-property: background-color;
     transition-delay: 2s;
+}
+
+
+.selectedButtonWhileTyping {
+    background-color: #429890;
+    color: white;
+}
+
+
+.normalButton {
+    background-color: rgb(239, 239, 239);
+    color: black;
 }
 
 
