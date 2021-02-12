@@ -202,3 +202,6 @@ choiceButtons.addEventListener("click", selectText, false);
 //----------------is selected, then only two buttons get disabled and so on...need reset function to work better.
 //--------After resetting if user types without pressing button, it styles the previously selected box as selected again.
 //show the error text as red and strikeout ---> NEXT
+
+
+//im on the bugfix branch
