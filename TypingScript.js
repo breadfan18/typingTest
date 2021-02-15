@@ -206,3 +206,8 @@ choiceButtons.addEventListener("click", selectText, false);
 
 //im on the bugfix branch
 
+
+for (let index = 0; index < 10; index++) {
+    console.log(index);
+    
+}
