@@ -181,9 +181,11 @@ function disableUnselectedButtons() {
 
     for (let i = 0; i < allButtons.length; i++) {
         let currentButtonId = allButtons[i].getAttribute("id");
-        if (currentButtonId !== selectedButtonID) {
-            document.querySelector("#" + currentButtonId).disabled = true;
-        }
+        document.querySelector("#" + currentButtonId).disabled = true;
+
+        // if (currentButtonId !== selectedButtonID) {
+        //     document.querySelector("#" + currentButtonId).disabled = true;
+        // }
     }
 }
 
