@@ -204,7 +204,6 @@ choiceButtons.addEventListener("click", selectText, false);
 //show the error text as red and strikeout ---> NEXT
 
 
-//strikeout branch
 
 
-
+//spellcheckchars branch
