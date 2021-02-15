@@ -121,6 +121,7 @@ h1 {
     background-color: #429890;
     color: white;
     box-shadow: 0 0 5px #fff;
+    cursor: pointer;
 }
 
 
@@ -143,9 +144,9 @@ h1 {
     color: white;
 }
 
-
+/* 
 .normalButton {
     background-color: rgb(239, 239, 239);
     color: black;
-}
+} */
 
