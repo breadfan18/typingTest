@@ -25,7 +25,7 @@ function selectText(e) {
     highlightSpan.innerHTML = "";
     testArea.value = "";
     originTextElement.style.color = "black";
-    let selection = e.target.innerHTML;
+    let selection = e.target.innerHTML;     
     switch (selection) {
         case "Manchester United":
             originTextElement.innerHTML = textChoices[0];
@@ -120,7 +120,8 @@ function reset() {
     errorCounter.style.color = "black";
     originTextElement.innerHTML = textChoices[4];
     highlightSpan.innerHTML = "";
-    enableAllChoiceButtons();
+    selectedButtonID = null;
+    // enableAllChoiceButtons();
 
 }
 
