@@ -158,9 +158,6 @@ function countErrors(counterElement) {
 
 function enableAllChoiceButtons() {
     let allButtons = document.querySelectorAll(".textSelection button");
-    // let selectedElement = document.querySelector("#" + selectedButtonID);
-    // selectedElement.classList.add("normalButton");
-
 
     for (let i = 0; i < allButtons.length; i++) {
         let currentId =  allButtons[i].getAttribute("id");
