@@ -176,13 +176,16 @@ function enableAllChoiceButtons() {
 
 function disableUnselectedButtons() {
     let allButtons = document.querySelectorAll(".textSelection button");
-    let selectedButton = document.querySelector("#" + selectedButtonID);
-    selectedButton.classList.add("selectedButtonWhileTyping");
+    if (selectedButtonID !== null) {
+        let selectedButton = document.querySelector("#" + selectedButtonID);
+        selectedButton.classList.add("selectedButtonWhileTyping");
 
     for (let i = 0; i < allButtons.length; i++) {
         let currentButtonId = allButtons[i].getAttribute("id");
         document.querySelector("#" + currentButtonId).disabled = true;
     }
+    }
+
 }
 
 
