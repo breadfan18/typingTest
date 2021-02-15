@@ -85,12 +85,11 @@ function spellCheck() {
 
         if (currentText === originTextCopy) {
             testArea.style.borderColor = "#429890";
-            let successAudio = new Audio('/typingTest/sounds/Success.wav');
+            let successAudio = new Audio('/sounds/Success.wav');
             successAudio.play();
             clearInterval(interval);
         } else {
             if (currentText !== originTextSub) {
-                console.log(currentText);
                 let currentCharActual = currentText.charAt(charIndex - 1);
                 console.log("Actual: " + currentCharActual)
 
@@ -148,7 +147,7 @@ function countErrors(counterElement) {
     let keyID = event.keyCode;
     if (keyID !== 8) {
         counter++;
-        let errorAudio = new Audio('/typingTest/sounds/error.wav');
+        let errorAudio = new Audio('/sounds/error.wav');
         errorAudio.play();
     }
     return counter;
@@ -204,10 +203,7 @@ choiceButtons.addEventListener("click", selectText, false);
 //show the error text as red and strikeout ---> NEXT
 
 
-//im on the bugfix branch
+//strikeout branch
 
 
-for (let index = 0; index < 10; index++) {
-    console.log(index);
-    
-}
+
