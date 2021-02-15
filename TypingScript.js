@@ -24,7 +24,8 @@ let timerRunning = false;
 function selectText(e) {
     highlightSpan.innerHTML = "";
     testArea.value = "";
-    originTextElement.style.color = "black";
+    // originTextElement.style.color = "black";
+    originTextElement.classList.remove("typeWithoutSelectingButton");
     let selection = e.target.innerHTML;
     switch (selection) {
         case "Manchester United":
@@ -120,6 +121,7 @@ function reset() {
     errorCounter.style.color = "black";
     originTextElement.innerHTML = textChoices[4];
     highlightSpan.innerHTML = "";
+    originTextElement.classList.remove("typeWithoutSelectingButton");
     document.querySelector("#" + selectedButtonID).classList.remove("selectedButtonWhileTyping");
     selectedButtonID = null;
     enableAllChoiceButtons();
@@ -131,7 +133,8 @@ function reset() {
 function start() {
     disableUnselectedButtons();
     if (originTextElement.innerHTML === textChoices[4]) {
-        originTextElement.style.color = "red";
+        // originTextElement.style.color = "red";
+        originTextElement.classList.add("typeWithoutSelectingButton");
     }
     else {
         let currentTextLength = testArea.value.length;
@@ -158,9 +161,6 @@ function countErrors(counterElement) {
 
 function enableAllChoiceButtons() {
     let allButtons = document.querySelectorAll(".textSelection button");
-    // let selectedElement = document.querySelector("#" + selectedButtonID);
-    // selectedElement.classList.add("normalButton");
-
 
     for (let i = 0; i < allButtons.length; i++) {
         let currentId =  allButtons[i].getAttribute("id");
@@ -176,13 +176,16 @@ function enableAllChoiceButtons() {
 
 function disableUnselectedButtons() {
     let allButtons = document.querySelectorAll(".textSelection button");
-    let selectedButton = document.querySelector("#" + selectedButtonID);
-    selectedButton.classList.add("selectedButtonWhileTyping");
+    if (selectedButtonID !== null) {
+        let selectedButton = document.querySelector("#" + selectedButtonID);
+        selectedButton.classList.add("selectedButtonWhileTyping");
 
     for (let i = 0; i < allButtons.length; i++) {
         let currentButtonId = allButtons[i].getAttribute("id");
         document.querySelector("#" + currentButtonId).disabled = true;
     }
+    }
+
 }
 
 
@@ -204,6 +207,12 @@ choiceButtons.addEventListener("click", selectText, false);
 //show the error text as red and strikeout ---> NEXT
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> spellcheckchars
+
+//spellcheckers branch
 
 
 //main branch
