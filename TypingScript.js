@@ -209,4 +209,3 @@ choiceButtons.addEventListener("click", selectText, false);
 //spellcheckers branch
 
 
-//tests
