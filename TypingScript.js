@@ -24,7 +24,8 @@ let timerRunning = false;
 function selectText(e) {
     highlightSpan.innerHTML = "";
     testArea.value = "";
-    originTextElement.style.color = "black";
+    // originTextElement.style.color = "black";
+    originTextElement.classList.remove("typeWithoutSelectingButton");
     let selection = e.target.innerHTML;
     switch (selection) {
         case "Manchester United":
@@ -120,6 +121,7 @@ function reset() {
     errorCounter.style.color = "black";
     originTextElement.innerHTML = textChoices[4];
     highlightSpan.innerHTML = "";
+    originTextElement.classList.remove("typeWithoutSelectingButton");
     document.querySelector("#" + selectedButtonID).classList.remove("selectedButtonWhileTyping");
     selectedButtonID = null;
     enableAllChoiceButtons();
@@ -131,7 +133,8 @@ function reset() {
 function start() {
     disableUnselectedButtons();
     if (originTextElement.innerHTML === textChoices[4]) {
-        originTextElement.style.color = "red";
+        // originTextElement.style.color = "red";
+        originTextElement.classList.add("typeWithoutSelectingButton");
     }
     else {
         let currentTextLength = testArea.value.length;

@@ -144,11 +144,11 @@ h1 {
     color: white;
 }
 
-/* .typeWithoutSelectingButton {
+.typeWithoutSelectingButton {
     color: red;
     font-size: 20px;
     transition: 1s ease;
-} */
+}
 /* 
 .normalButton {
     background-color: rgb(239, 239, 239);
