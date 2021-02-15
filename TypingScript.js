@@ -206,7 +206,7 @@ choiceButtons.addEventListener("click", selectText, false);
 
 
 
-//main branch\
+//spellcheckers branch
 
 
 //tests
