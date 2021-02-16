@@ -138,7 +138,6 @@ h1 {
     transition-delay: 2s;
 }
 
-
 .selectedButtonWhileTyping {
     background-color: #429890;
     color: white;
@@ -155,7 +154,7 @@ h1 {
     color: black;
 } */
 
-.strikeout {
+#typingError {
     color: blue;
     text-decoration: line-through;   
 }

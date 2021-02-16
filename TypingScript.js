@@ -1,5 +1,6 @@
 let originTextElement = document.querySelector("#original");
 let highlightSpan = document.querySelector("#typingHighlight");
+let typingErrrorSpan = document.querySelector("#typingError");
 const theTimer = document.querySelector(".timer");
 const resetButton = document.querySelector("#reset")
 const testArea = document.querySelector("#text-area");
@@ -77,10 +78,8 @@ function spellCheck() {
         let currentText = testArea.value;
 
         let originTextSub = originTextCopy.substring(0, currentText.length);
-
-        console.log(originTextSub);
-
         let remainingText = originTextCopy.substring(originTextSub.length, originTextCopy.length);
+
         highlightSpan.innerText = originTextSub;
         originTextElement.innerHTML = remainingText;
 
@@ -103,23 +102,14 @@ function spellCheck() {
         } else {
             if (currentCharExpected !== currentCharActual) {
 
-                const errorSpan = document.createElement("span");
-                errorSpan.classList.add("strikeout");
-                errorSpan.innerHTML = currentCharActual;
-                highlightSpan.appendChild(errorSpan);
+                // const errorSpan = document.createElement("span");
+                // errorSpan.classList.add("strikeout");
+                // errorSpan.innerHTML = currentCharActual;
+                // highlightSpan.appendChild(errorSpan);
+
+                typingErrrorSpan.innerHTML = currentCharActual;
+
                 
-                
-                
-                // let currentCharActual = currentText.charAt(charIndex - 1);
-                // console.log("Actual: " + currentCharActual)
-
-                // let currentCharExpected = originTextCopy.charAt(charIndex - 1);
-                // console.log("Expected: " + currentCharExpected);
-
-                /////above this comment is new code
-
-
-
 
                 testArea.style.borderColor = "orangered";
                 errorCounter.innerHTML = countErrors(errorCounter);
