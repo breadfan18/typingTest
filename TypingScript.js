@@ -24,7 +24,6 @@ let timerRunning = false;
 function selectText(e) {
     highlightSpan.innerHTML = "";
     testArea.value = "";
-    // originTextElement.style.color = "black";
     originTextElement.classList.remove("typeWithoutSelectingButton");
     let selection = e.target.innerHTML;
     switch (selection) {
