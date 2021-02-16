@@ -72,17 +72,29 @@ function runTimer() {
 }
 
 
-let charIndex = 0;
-
 //Text Validation
 function spellCheck() {
     if (originTextElement.innerHTML !== textChoices[4]) {
         let currentText = testArea.value;
 
         let originTextSub = originTextCopy.substring(0, currentText.length);
+
+        console.log(originTextSub);
+
         let remainingText = originTextCopy.substring(originTextSub.length, originTextCopy.length);
-        highlightSpan.innerText = currentText;
+        highlightSpan.innerText = originTextSub;
         originTextElement.innerHTML = remainingText;
+
+        let currentIndex = currentText.length;
+        // console.log(currentIndex);
+
+        // console.log("Whole current text: " + currentText);
+        // console.log("Index: " + charIndex);
+        let currentCharActual =  currentText.substring(currentIndex-1, currentIndex); 
+        let currentCharExpected = originTextCopy.substring(currentIndex-1, currentIndex);
+        
+        // console.log("Actual: " + currentCharActual);
+        // console.log("Expected: " + currentCharExpected);
 
         if (currentText === originTextCopy) {
             testArea.style.borderColor = "#429890";
@@ -90,21 +102,32 @@ function spellCheck() {
             successAudio.play();
             clearInterval(interval);
         } else {
-            if (currentText !== originTextSub) {
-                let currentCharActual = currentText.charAt(charIndex - 1);
-                console.log("Actual: " + currentCharActual)
+            if (currentCharExpected !== currentCharActual) {
 
-                let currentCharExpected = originTextCopy.charAt(charIndex - 1);
-                console.log("Expected: " + currentCharExpected);
+                const errorSpan = document.createElement("span");
+                errorSpan.classList.add("strikeout");
+                errorSpan.innerHTML = currentCharActual;
+                highlightSpan.appendChild(errorSpan);
+                
+                
+                
+                // let currentCharActual = currentText.charAt(charIndex - 1);
+                // console.log("Actual: " + currentCharActual)
+
+                // let currentCharExpected = originTextCopy.charAt(charIndex - 1);
+                // console.log("Expected: " + currentCharExpected);
 
                 /////above this comment is new code
+
+
+
+
                 testArea.style.borderColor = "orangered";
                 errorCounter.innerHTML = countErrors(errorCounter);
             } else {
                 testArea.style.borderColor = "lightblue";
             }
         }
-        charIndex++;
     }
 }
 
@@ -131,7 +154,6 @@ function reset() {
 function start() {
     disableUnselectedButtons();
     if (originTextElement.innerHTML === textChoices[4]) {
-        // originTextElement.style.color = "red";
         originTextElement.classList.add("typeWithoutSelectingButton");
     }
     else {

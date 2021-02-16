@@ -155,3 +155,8 @@ h1 {
     color: black;
 } */
 
+.strikeout {
+    color: blue;
+    text-decoration: line-through;   
+}
+
